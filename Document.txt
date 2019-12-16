@@ -1,0 +1,25 @@
+
+# repository name must be lowercase
+
+$ docker build -t session_image .
+$ docker run -d --name session_container -p:8080:80 session_image
+
+# http://192.168.56.101:8080/weatherforecast
+$ docker logs -t d231947cf690 # -t Show timestamps
+
+
+###################################
+
+$ docker-compose up -d
+$ docker-compose down
+$ docker-compose config
+# http://192.168.56.101:8083
+###################################
+
+$ docker image prune
+$ docker container prune
+$ docker volume prune
+###################################
+$ docker rm $(docker ps -a -q)
+$ docker rm -f $(docker ps -a -q)
+$ docker logs  ContainerID
